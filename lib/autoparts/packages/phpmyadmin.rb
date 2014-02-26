@@ -83,12 +83,7 @@ module Autoparts
       end
 
       def apache2_dependency
-        unless @apache_dependency
-          php_dependency = get_dependency 'php5'
-          @apache2_dependency ||= php_dependency.get_dependency 'apache2'
-        end
-
-        @apache2_dependency
+        get_dependency 'apache2'
       end
 
       def apache_config_name
